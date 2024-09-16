@@ -1,10 +1,8 @@
-import Editor from "@/components/editor";
-import Image from "next/image";
-
+import LandingPageView from "@/views/LandingPageView";
 export default function Home() {
   return (
     <div className="">
-      <Editor/>
+      <LandingPageView/>
     </div>
   );
 }

@@ -117,7 +117,7 @@
 //   },
 // ];
 
-interface Component {
+export interface Component {
   id: string;
   name: string;
   html: string;
