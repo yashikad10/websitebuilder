@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { components, Component } from "@/components/editor/config"; // Adjust import path as needed
 import Editor from "@/components/editor";
+import { ArrowLeft } from "lucide-react";
 
 const templates = [
   { id: "template_1", name: "Template 1", imageUrl: "/asset/Template1.png" },
@@ -32,9 +33,9 @@ const LandingPageView: React.FC = () => {
       {selectedTemplate && (
         <button
           onClick={handleBackClick}
-          className="mb-4 px-4 py-2 bg-gray-500 text-white rounded-lg"
+          className="px-2 text-sm bg-gray-500 text-white rounded-lg"
         >
-          Back
+          <ArrowLeft/>
         </button>
       )}
       

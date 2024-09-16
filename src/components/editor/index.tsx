@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useRef, useCallback } from "react";
 import grapesjs from "grapesjs";
 import "grapesjs/dist/css/grapes.min.css";
@@ -28,30 +28,42 @@ const Editor: React.FC<EditorProps> = ({ template }) => {
       styleManager: {
         sectors: [
           {
-            name: 'Typography',
+            name: "Typography",
             open: false,
-            buildProps: ['font-size', 'color', 'text-align', 'font-family', 'line-height', 'letter-spacing'],
+            buildProps: [
+              "font-size",
+              "color",
+              "text-align",
+              "font-family",
+              "line-height",
+              "letter-spacing",
+            ],
             properties: [
-              { name: 'Font Size', property: 'font-size' },
-              { name: 'Text Color', property: 'color' },
-              { name: 'Text Align', property: 'text-align' },
-              { name: 'Font Family', property: 'font-family' },
-              { name: 'Line Height', property: 'line-height' },
-              { name: 'Letter Spacing', property: 'letter-spacing' },
-            ]
+              { name: "Font Size", property: "font-size" },
+              { name: "Text Color", property: "color" },
+              { name: "Text Align", property: "text-align" },
+              { name: "Font Family", property: "font-family" },
+              { name: "Line Height", property: "line-height" },
+              { name: "Letter Spacing", property: "letter-spacing" },
+            ],
           },
           {
-            name: 'Decorations',
+            name: "Decorations",
             open: false,
-            buildProps: ['background-color', 'border', 'border-radius', 'box-shadow'],
+            buildProps: [
+              "background-color",
+              "border",
+              "border-radius",
+              "box-shadow",
+            ],
             properties: [
-              { name: 'Background Color', property: 'background-color' },
-              { name: 'Border', property: 'border' },
-              { name: 'Border Radius', property: 'border-radius' },
-              { name: 'Box Shadow', property: 'box-shadow' },
-            ]
-          }
-        ]
+              { name: "Background Color", property: "background-color" },
+              { name: "Border", property: "border" },
+              { name: "Border Radius", property: "border-radius" },
+              { name: "Box Shadow", property: "box-shadow" },
+            ],
+          },
+        ],
       },
     });
 
@@ -101,7 +113,7 @@ const Editor: React.FC<EditorProps> = ({ template }) => {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col bg-gray-900 text-white">
+    <div className="w-full h-[80vh] text-white">
       <div className="w-full p-2 bg-gray-950 flex gap-4 justify-between">
         <div className="flex items-center gap-2">
           <PenTool size={30} color="white" />
@@ -109,12 +121,12 @@ const Editor: React.FC<EditorProps> = ({ template }) => {
         </div>
 
         <div className="flex gap-2">
-          <button
+          <label
             // onClick={() => applyTemplate(template.id)}
-            className="px-2 py-2 text-sm rounded-md bg-gray-800 text-white"
+            className="w-32 text-center px-2 py-2 text-sm rounded-md bg-gray-800 text-white"
           >
             {template.name}
-          </button>
+          </label>
         </div>
 
         <div className="flex gap-4 items-center">
@@ -128,15 +140,9 @@ const Editor: React.FC<EditorProps> = ({ template }) => {
           </button>
         </div>
       </div>
-
-      <div className="flex-grow grid grid-cols-12">
-        <div id="blocks" className="col-span-12 p-4 border-r bg-gray-800 contain">
-        <div id="gjs" className="col-span-9 h-full bg-gray-900">
-          {/* GrapesJS editor */}
-        </div>
-        </div>
-        
-      </div>
+      <div id="gjs" className="col-span-9 h-full bg-gray-900">
+            {/* GrapesJS editor */}
+          </div>
     </div>
   );
 };
