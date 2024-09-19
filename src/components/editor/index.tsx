@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { useEffect, useRef, useCallback } from "react";
 import grapesjs from "grapesjs";
 import "grapesjs/dist/css/grapes.min.css";
 import { PenTool, Undo, Redo } from "lucide-react";
 //@ts-ignore
 import plugin from "grapesjs-tailwind";
-import { Component } from "@/components/editor/config"; // Adjust import path as needed
+import { Component } from "@/components/editor/config";
 
 interface EditorProps {
   template: Component;
@@ -28,30 +28,42 @@ const Editor: React.FC<EditorProps> = ({ template }) => {
       styleManager: {
         sectors: [
           {
-            name: 'Typography',
+            name: "Typography",
             open: false,
-            buildProps: ['font-size', 'color', 'text-align', 'font-family', 'line-height', 'letter-spacing'],
+            buildProps: [
+              "font-size",
+              "color",
+              "text-align",
+              "font-family",
+              "line-height",
+              "letter-spacing",
+            ],
             properties: [
-              { name: 'Font Size', property: 'font-size' },
-              { name: 'Text Color', property: 'color' },
-              { name: 'Text Align', property: 'text-align' },
-              { name: 'Font Family', property: 'font-family' },
-              { name: 'Line Height', property: 'line-height' },
-              { name: 'Letter Spacing', property: 'letter-spacing' },
-            ]
+              { name: "Font Size", property: "font-size" },
+              { name: "Text Color", property: "color" },
+              { name: "Text Align", property: "text-align" },
+              { name: "Font Family", property: "font-family" },
+              { name: "Line Height", property: "line-height" },
+              { name: "Letter Spacing", property: "letter-spacing" },
+            ],
           },
           {
-            name: 'Decorations',
+            name: "Decorations",
             open: false,
-            buildProps: ['background-color', 'border', 'border-radius', 'box-shadow'],
+            buildProps: [
+              "background-color",
+              "border",
+              "border-radius",
+              "box-shadow",
+            ],
             properties: [
-              { name: 'Background Color', property: 'background-color' },
-              { name: 'Border', property: 'border' },
-              { name: 'Border Radius', property: 'border-radius' },
-              { name: 'Box Shadow', property: 'box-shadow' },
-            ]
-          }
-        ]
+              { name: "Background Color", property: "background-color" },
+              { name: "Border", property: "border" },
+              { name: "Border Radius", property: "border-radius" },
+              { name: "Box Shadow", property: "box-shadow" },
+            ],
+          },
+        ],
       },
     });
 
@@ -72,6 +84,7 @@ const Editor: React.FC<EditorProps> = ({ template }) => {
         <html>
           <head>
             <style>${templateCss}</style>
+            <script src="https://cdn.tailwindcss.com"></script>
           </head>
           <body>${templateHtml}</body>
         </html>
@@ -130,12 +143,14 @@ const Editor: React.FC<EditorProps> = ({ template }) => {
       </div>
 
       <div className="flex-grow grid grid-cols-12">
-        <div id="blocks" className="col-span-12 p-4 border-r bg-gray-800 contain">
-        <div id="gjs" className="col-span-9 h-full bg-gray-900">
-          {/* GrapesJS editor */}
+        <div
+          id="blocks"
+          className="col-span-12 p-4 border-r bg-gray-800 contain"
+        >
+          <div id="gjs" className="col-span-9 h-full bg-gray-900">
+            {/* GrapesJS editor */}
+          </div>
         </div>
-        </div>
-        
       </div>
     </div>
   );

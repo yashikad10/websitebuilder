@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 w-full  bg-[#0A0A0A] text-white p-4 z-10">
+    <header className="sticky left-0 right-0 top-0 z-[999] bg-[#0A0A0A] text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and Title */}
         <div className="flex items-center space-x-4">
@@ -12,8 +12,14 @@ const Header = () => {
           <div className="bg-white p-2 rounded">
             <span className="text-black text-lg font-bold">🟦</span>
           </div>
+
           {/* Title */}
-          <span className="text-xl font-semibold">NovaTemp</span>
+          {/* Wrapped the NovaTemp title with a Link component to navigate to the homepage */}
+          <Link href="/">
+            <span className="text-xl font-semibold cursor-pointer hover:text-gray-300">
+              NovaTemp
+            </span>
+          </Link>
         </div>
 
         {/* Navigation */}
